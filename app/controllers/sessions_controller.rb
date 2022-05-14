@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # ユーザーログイン後にユーザー情報のページにリダイレクトする
       log_in user
-      redirect_to user
+      redirect_back_or user
     else
       # エラーメッセージを作成する
       #alert-danger => 赤色のフラッシュ
